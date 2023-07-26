@@ -7,18 +7,25 @@ void main() {
   ));
 }
 
-class HomePage extends StatelessWidget { // Um widget que não requer estado mutável.
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   var count = 5;
+
   void increment() {
     count++;
-    print(count);
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu Primeiro App"),
+        title: const Text("Meu Primeiro App"),
       ),
       body: Center(
         child: Text(
@@ -34,5 +41,4 @@ class HomePage extends StatelessWidget { // Um widget que não requer estado mut
       ),
     );
   }
-
 }
